@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ConnectString.Models.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>รายชื่อคนไข้</h1>
+
+
+<div class=""></div>
+<div class="overflow-auto" style="height : 500px" >
+    <table  class="table table-bordered table-striped mb-0 h-50">
+        <thead class="table-dark" >
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Patient_id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Patient_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Patient_sex)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody >
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Patient_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Patient_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Patient_sex)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Index", "Picture", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody >
+    </table>
+</div>
